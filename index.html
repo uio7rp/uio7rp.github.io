@@ -6,9 +6,9 @@
     <meta name="description" content="Professional CV of Adedamola (Dammy) Bello, M.D.">
     <title>Adedamola (Dammy) Bello CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        
         /* Use CSS variables for consistent colors and easy updates */
         :root {
             --primary-color: #004B28;
@@ -20,16 +20,26 @@
         body {
             color: var(--text-color);
             background-color: var(--background-color);
-            font-family: 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
             margin: 0;
             padding: 0;
+            background-image: linear-gradient(to bottom right, #f5f5f5, #e0e0e0);
+            scroll-behavior: smooth;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-size: 1rem;
         }
 
         /* Header Section */
         .header {
             background-color: var(--background-color);
             color: var(--primary-color);
-            padding: 20px 0;
+            padding: 40px 0;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -47,7 +57,7 @@
         }
 
         .header h1 {
-            font-size: 36px;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-weight: 700;
             margin: 10px 0;
         }
@@ -55,15 +65,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
             margin-top: 10px;
         }
 
         .header .contact-info a {
             color: var(--primary-color);
             text-decoration: none;
-            margin: 0 15px; /* Add spacing between the two emails */
-            font-size: 16px;
-            display: inline-block;
+            margin: 0 15px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .header .contact-info a:hover {
+            color: var(--secondary-color);
         }
 
         .header .contact-info i {
@@ -73,179 +90,146 @@
         /* Main Content Section */
         .container {
             max-width: 900px;
-            margin: 50px auto;
+            margin: 30px auto;
             background-color: white;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
 
-        h2 {
-            font-size: 22px;
+        /* Common styles for headings and sections */
+        h2, .section-heading {
+            font-size: 1.375rem;
             color: var(--secondary-color);
             border-bottom: 2px solid #ddd;
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-weight: 600;
+            transition: color 0.3s ease;
         }
 
+        .section-heading {
+            font-size: 1.25rem;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading:hover {
+            color: var(--primary-color);
+        }
+
+        /* Base section styles */
+        .section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+        }
+
+        /* List styles */
         ul {
             list-style-type: none;
-            padding-left: 0;
             margin: 0;
+            padding: 0;
         }
 
-        /* Two-Column Layout for Text and Dates */
-        /* Ensure both left and right columns align properly */
-    .section {
-        display: grid;
-        grid-template-columns: 1fr auto; /* Left column takes available space, right column auto-sizes */
-        column-gap: 20px; /* Spacing between the left and right */
-        margin-bottom: 30px;
-    }
-
-    .section h2 {
-        grid-column: 1 / span 2; /* Make the heading span across both columns */
-    }
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .section ul li {
-        margin-bottom: 10px;
-        line-height: 1.6;
-    }
-
-    .section .dates ul {
-        text-align: left;
-        font-size: 14px;
-        color: #999;
-    }
-
-    .section .dates ul li {
-        margin-bottom: 10px; /* Matches the spacing with the left-side items */
-    }
-
-    .section-heading {
-        color: var(--secondary-color);
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        font-size: 22px;
-        font-weight: 600;
-    }
-
-    .section-content {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        column-gap: 20px;
-    }
-
-    .section:nth-child(-n+2) .section-content {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        column-gap: 20px;
-    }
-
-    .section:nth-child(-n+2) .dates ul {
-        text-align: right;
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .section:nth-child(-n+2) ul li {
-        margin-bottom: 15px;
-    }
-
-    /* Styles for sections III and onwards */
-    .section:nth-child(n+3) .section-content {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .section:nth-child(n+3) .entry {
-        display: flex;
-        margin-bottom: 20px;
-    }
-
-    .section:nth-child(n+3) .date {
-        flex: 0 0 120px;
-        padding-right: 20px;
-        text-align: right;
-        color: var(--text-color);
-    }
-
-    .section:nth-child(n+3) .content {
-        flex: 1;
-        padding-left: 20px;
-        border-left: 1px solid #ddd;
-    }
-
-    .section:nth-child(n+3) .content strong {
-        display: inline-block;
-        margin-bottom: 5px;
-    }
-
-    @media (max-width: 768px) {
-        .container {
-            padding: 20px;
+        .section ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
-        .entry {
-            flex-direction: column;
-        }
-
-        .date {
-            text-align: left;
-            padding-right: 0;
-            margin-bottom: 5px;
-        }
-
-        .content {
-            padding-left: 0;
-            border-left: none;
-        }
-
-        .header .contact-info {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .header .contact-info a {
-            margin: 5px 0;
-        }
-
-        .section:nth-child(-n+2) .section-content {
-            grid-template-columns: 1fr;
-        }
-
+        /* Styles for the first two sections */
         .section:nth-child(-n+2) .dates ul {
-            text-align: left;
+            text-align: right;
+        }
+
+        .section:nth-child(-n+2) ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Styles for sections III and onwards */
+        .section:nth-child(n+3) .section-content {
+            display: flex;
+            flex-direction: column;
         }
 
         .section:nth-child(n+3) .entry {
-            flex-direction: column;
+            display: flex;
+            margin-bottom: 15px;
+            transition: transform 0.2s ease;
+        }
+
+        .section:nth-child(n+3) .entry:hover {
+            transform: translateX(5px);
         }
 
         .section:nth-child(n+3) .date {
+            flex: 0 0 120px;
+            padding-right: 10px;
             text-align: left;
-            padding-right: 0;
-            margin-bottom: 5px;
+            color: var(--text-color);
+            font-style: italic;
+            color: var(--secondary-color);
         }
 
         .section:nth-child(n+3) .content {
-            padding-left: 0;
-            border-left: none;
+            flex: 1;
+            padding-left: 10px;
+            border-left: 1px solid #ddd;
         }
 
-        .profile-image {
-            width: 150px;
-            height: 150px;
+        .section:nth-child(n+3) .content strong {
+            display: inline-block;
+            margin-bottom: 3px;
         }
-    }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .section-content, 
+            .section:nth-child(-n+2) .section-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section:nth-child(-n+2) .dates ul {
+                text-align: left;
+            }
+
+            .section:nth-child(n+3) .entry,
+            .entry {
+                flex-direction: column;
+            }
+
+            .section:nth-child(n+3) .date,
+            .date {
+                text-align: left;
+                padding-right: 0;
+                margin-bottom: 3px;
+            }
+
+            .section:nth-child(n+3) .content,
+            .content {
+                padding-left: 0;
+                border-left: none;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
 
         footer {
             text-align: center;
@@ -253,11 +237,176 @@
             color: #aaa;
             margin-top: 50px;
         }
+
+        /* Styles for the first two sections */
+        .top-sections .entry {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .top-sections .content {
+            margin-bottom: 5px;
+        }
+
+        .top-sections .date {
+            align-self: flex-start;
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+        /* Remove any borders */
+        .top-sections .section-content,
+        .top-sections .entry,
+        .top-sections .content,
+        .top-sections .date {
+            border: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .top-sections .entry {
+                flex-direction: column;
+            }
+
+            .top-sections .content {
+                padding-right: 0;
+            }
+
+            .top-sections .date {
+                text-align: left;
+                margin-top: 5px;
+            }
+        }
+
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: var(--secondary-color);
+            border-radius: 6px;
+            border: 3px solid #f1f1f1;
+        }
+
+        :focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+            /* Add more print-specific styles as needed */
+        }
+
+        .education-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .education-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .education-content {
+            flex: 1;
+        }
+
+        .education-content h3 {
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+
+        .education-content p {
+            margin: 0;
+            color: var(--text-color);
+            font-size: 0.9em;
+        }
+
+        .education-date {
+            color: var(--text-color);
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .education-item {
+                flex-direction: column;
+            }
+
+            .education-date {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 10px 0;
+            vertical-align: top;
+        }
+
+        .info-table td:first-child {
+            padding-right: 20px;
+        }
+
+        .info-table td:last-child {
+            text-align: right;
+            white-space: nowrap;
+            color: var(--secondary-color);
+        }
+
+        .info-table tr:not(:last-child) td {
+            border-bottom: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .info-table, .info-table tbody, .info-table tr, .info-table td {
+                display: block;
+            }
+            
+            .info-table td:last-child {
+                text-align: left;
+                padding-top: 0;
+            }
+            
+            .info-table tr {
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <header class="header">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczNsEOLLkmAPwbQEhPyjoL39jlnMU5tBFo_3x_a03azlAbhtVsNwVz00FTlUM_Cg_Gf3_iuZX0pnAPghusU4elc5c8KLaZb8uadcvGwyL40mZl5Qz1GATA7IZSfsGzJIUNGnUD8NlZumSBu3UYIpvtc8=w654-h916-s-no-gm?authuser=0" alt="Dammy Bello" class="profile-image">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNsEOLLkmAPwbQEhPyjoL39jlnMU5tBFo_3x_a03azlAbhtVsNwVz00FTlUM_Cg_Gf3_iuZX0pnAPghusU4elc5c8KLaZb8uadcvGwyL40mZl5Qz1GATA7IZSfsGzJIUNGnUD8NlZumSBu3UYIpvtc8=w654-h916-s-no-gm?authuser=0" alt="Dammy Bello" class="profile-image" width="200" height="200">
         <h1>Adedamola (Dammy) Bello, M.D.</h1>
         <div class="contact-info">
             <a href="tel:+13068508733"><i class="fas fa-phone-alt"></i> +1 (306) 850-8733</a>
@@ -270,42 +419,83 @@
     <main class="container">
         <section class="section">
             <h2 class="section-heading">I. Education</h2>
-            <div class="section-content">
-                <div>
-                    <ul>
-                        <li><strong>Internal Medicine Residency [PGY2]</strong><br>University of Saskatchewan, Saskatoon, SK, Canada</li>
-                        <li><strong>Doctor of Medicine</strong><br>St. Martinus University Faculty of Medicine, Willemstad, Curaçao</li>
-                        <li><strong>Bachelor of Science, Biochemistry and Biotechnology</strong><br>University of Saskatchewan, Saskatoon, SK, Canada</li>
-                    </ul>
+            <div class="education-list">
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>Internal Medicine Residency [PGY2]</h3>
+                        <p>University of Saskatchewan, Saskatoon, SK, Canada</p>
+                    </div>
+                    <div class="education-date">2023 - Present</div>
                 </div>
-                <div class="dates">
-                    <ul>
-                        <li>2023 - Present</li>
-                        <li>2018 - 2023</li>
-                        <li>2013 - 2017</li>
-                    </ul>
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>Doctor of Medicine</h3>
+                        <p>St. Martinus University Faculty of Medicine, Willemstad, Curaçao</p>
+                    </div>
+                    <div class="education-date">2018 - 2023</div>
+                </div>
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>Bachelor of Science, Biochemistry and Biotechnology</h3>
+                        <p>University of Saskatchewan, Saskatoon, SK, Canada</p>
+                    </div>
+                    <div class="education-date">2013 - 2017</div>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <h2 class="section-heading">II. Certifications and Licensure</h2>
+            <table class="info-table">
+                <tr>
+                    <td>Postgraduate Training Licence,<br>College of Physicians and Surgeons of Saskatchewan</td>
+                    <td>[July 2023 - Present]</td>
+                </tr>
+                <tr>
+                    <td>Diplomate of the American Board of Internal Medicine (ABIM)</td>
+                    <td>[Expected]</td>
+                </tr>
+                <tr>
+                    <td>USMLE Steps 1, 2 </td>
+                    <td>[Completed]</td>
+                </tr>
+                <tr>
+                    <td>BLS/ACLS Certified</td>
+                    <td>[Current]</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2 class="section-heading">III. Postgraduate Residency Core Clinical Rotations and Electives</h2>
             <div class="section-content">
-                <div>
-                    <ul>
-                        <li>State Medical License (active and inactive)</li>
-                        <li>Diplomate of the American Board of Internal Medicine (ABIM)</li>
-                        <li>USMLE Steps 1, 2, 3</li>
-                        <li>BLS/ACLS Certified</li>
-                    </ul>
+                <div class="entry">
+                    <div class="date">Sept 2024 - Oct 2024</div>
+                    <div class="content">
+                        <strong>Gastroenterology</strong>, University of Manitoba, Winnipeg, MB<br>
+                        Supervisor:
+                    </div>
                 </div>
-                <div class="dates">
-                    <ul>
-                        <li>[Expected]</li>
-                        <li>[Expected]</li>
-                        <li>[Completed]</li>
-                        <li>[Current]</li>
-                    </ul>
+                <div class="entry">
+                    <div class="date">Sept 2024 - Oct 2024</div>
+                    <div class="content">
+                        <strong>Gastroenterology</strong>, Western University, London, ON<br>
+                        Supervisor:
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="date">Sept 2024 - Sept 2024</div>
+                    <div class="content">
+                        <strong>Ambulatory, Gastroenterology</strong>, University of Saskatchewan, Saskatoon, SK<br>
+                        Supervisor(s): Dr. T. Guzowski, Dr. S. Fowler, Dr. A. Bedi, Dr. S. Haimanot, Dr. M. Niazi, Dr. J. Bailey
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="date">Sept 2023 - Oct 2023</div>
+                    <div class="content">
+                        <strong>Gastroenterology</strong>, University of Saskatchewan, Saskatoon, SK<br>
+                        Supervisor(s): Dr. Anil Bedi, Dr. Mina Niazi, Dr. Eddie Ha, Dr. Jennifer Bailey
+                    </div>
                 </div>
             </div>
         </section>
@@ -396,15 +586,39 @@
             <h2 class="section-heading">VI. Leadership Roles and Committee Memberships</h2>
             <div class="section-content">
                 <div class="entry">
-                    <div class="date">2024 - Present</div>
+                    <div class="date">2024 - 2025</div>
                     <div class="content">
-                        Vice President, Resident Doctors of Saskatchewan
+                        Vice President, Resident Doctors of Saskatchewan (RDOS)
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="date">2024 - 2025</div>
+                    <div class="content">
+                        RDOS Human Resources Committee (HRC) Member
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="date">2024 - 2025</div>
+                    <div class="content">
+                        RDOS Awards Committee Member
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="date">2024 - 2025</div>
+                    <div class="content">
+                        Saskatchewan Medical Association (SMA) Board Member
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="date">2024 </div>
+                    <div class="content">
+                        Usask College of Medicine Assessor, Multiple Mini Interviews (MMI)
                     </div>
                 </div>
                 <div class="entry">
                     <div class="date">2024 - Present</div>
                     <div class="content">
-                        Saskatoon Internal Medicine Social Media Manager
+                        Saskatoon Internal Medicine Program Social Media Manager
                     </div>
                 </div>
             </div>
@@ -431,6 +645,12 @@
         <section class="section">
             <h2 class="section-heading">VIII. Honors and Awards</h2>
             <div class="section-content">
+                <div class="entry">
+                    <div class="date">2024</div>
+                    <div class="content">
+                        Saskatchewan Medical Association Resident Leader Of The Year
+                    </div>
+                </div>
                 <div class="entry">
                     <div class="date">2024</div>
                     <div class="content">
@@ -470,7 +690,7 @@
                 <div class="entry">
                     <div class="date">2024</div>
                     <div class="content">
-                        Resuscitation and Procedural interdisciplinary Curriculum
+                        Resuscitation and Procedural interdisciplinary Curriculum, University of Saskatchewan
                     </div>
                 </div>
                 <div class="entry">
